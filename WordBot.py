@@ -4,10 +4,10 @@ import tweepy
 
 CODING = 'UTF-8'
 
-consumer_key = 'r3njw0YBWHAi0MQ4QyIwnaBx8'
-consumer_secret = '1xTAvXJulcoP8fAGHSC4nrrl8mxfvmaVs3u99nCSWxd7lrKFW8'
-access_token = '1244591011407552512-4EBdK9Tpek2K6Ge8SpuohiVzTAdMGl'
-access_token_secret = '6uWkwUx0FssImftCIf75Ym39hQLCCvQlbpZSRDViXHXir'
+consumer_key = '...'
+consumer_secret = '...'
+access_token = '...'
+access_token_secret = '...'
 
 
 class WordBot(object):
