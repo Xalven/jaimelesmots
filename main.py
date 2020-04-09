@@ -1,9 +1,11 @@
 #-*- encoding: utf-8 -*-
-import time
 from file import *
 from WordBot import *
 
 def main():
+    """
+    main function
+    """
     wordBot = WordBot(consumer_key, consumer_secret, access_token, access_token_secret)
     fileHandler = FileHandler()
     current_index = fileHandler.get_current_index
