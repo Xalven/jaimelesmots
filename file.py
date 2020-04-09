@@ -27,7 +27,7 @@ class FileHandler(object):
         return read_current_index()
 
     @property
-    def _set_current_index(self, add = 1):
+    def set_current_index(self, add = 1):
         self._current_index = int(self._current_index)
         self._current_index +=add
         self._current_index = str(self._current_index)
@@ -52,10 +52,4 @@ class FileHandler(object):
         del a
         del liste_de_mot
         self._word_list+=final_list
-        return self._word_list
-
-
-if __name__ == '__main__':
-    fileHandler = FileHandler
-
-    print(read_current_index())
+        return self.word_list
