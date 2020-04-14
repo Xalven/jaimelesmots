@@ -51,12 +51,11 @@ class WordBot(object):
     @property
     def _get_word_list(self):
         self._word_list = []
-        with open('wordlist.txt', 'r') as mot:
+        with open('wordlist.txt', 'rb', ) as mot:
             for i in mot.readlines():
-                word = i.replace("\n", '')
-                word = bytes(word, 'cp1252')
+                word = i.replace(bytes("\r\n", 'utf-8'), bytes('', 'utf-8'))
                 word = codecs.decode(word, 'utf-8')
-                self._word_list.append(word)
+                self._word_list.append(word.lower())
             mot.close()
         return self._word_list
     def reset_index(self):
