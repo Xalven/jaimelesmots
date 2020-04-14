@@ -1,3 +1,3 @@
 # jaimelesmotsbot
-Moi aimer tout les mots urgh
+Moi aimer tous les mots urgh
 
