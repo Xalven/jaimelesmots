@@ -48,23 +48,14 @@ class WordBot(object):
 
     @property
     def _get_word_list(self):
-        liste_de_mot = []
+        self._word_list = []
         with open('wordlist.txt', 'r') as mot:
             for i in mot.readlines():
-                liste_de_mot.append(i)
-        nombre_de_mot = len(liste_de_mot)
-        a = []
-        final_list = []
-        for i in range(0, nombre_de_mot):
-            b = liste_de_mot[i].replace("\n", '')
-            a.append(b)
-        for i in range(0, nombre_de_mot):
-            a[i] = bytes(a[i], 'cp1252')
-            c = codecs.decode(a[i], 'utf-8')
-            final_list.append(c)
-        del a
-        del liste_de_mot
-        self._word_list+=final_list
+                word = i.replace("\n", '')
+                word = bytes(word, 'cp1252')
+                word = codecs.decode(word, 'utf-8')
+                self._word_list.append(word)
+            mot.close()
         return self._word_list
     def reset_index(self):
         with open("current_index.txt", "w") as current_index_file:
