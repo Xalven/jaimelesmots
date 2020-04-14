@@ -30,6 +30,7 @@ class WordBot(object):
     def _get_current_index(self):
         with open("current_index.txt", 'r') as current_index_file:
             self._current_index = current_index_file.readline()
+            current_index_file.close()
         return int(self._current_index)
 
     @property
@@ -39,6 +40,7 @@ class WordBot(object):
         self._current_index = str(self._current_index)
         with open("current_index.txt", "w") as current_index_file:
             current_index_file.write(self._current_index)
+            current_index_file.close()
 
     def _tweet(self, mot):
         try:
