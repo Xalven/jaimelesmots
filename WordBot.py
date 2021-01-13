@@ -66,6 +66,7 @@ class WordBot(object):
        wordlist = self._get_word_list
        word = wordlist[index]
        self._tweet(word)
+       self._increment_index()
 
 if __name__ == '__main__':
     wordBot = WordBot(consumer_key, consumer_secret, access_token, access_token_secret)
