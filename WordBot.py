@@ -30,17 +30,14 @@ class WordBot(object):
     def _get_current_index(self):
         with open("current_index.txt", 'r') as current_index_file:
             self._current_index = current_index_file.readline()
-            current_index_file.close()
         return int(self._current_index)
 
-    @property
     def _increment_index(self, add=1):
         self._current_index = self._get_current_index
         self._current_index +=add
         self._current_index = str(self._current_index)
         with open("current_index.txt", "w") as current_index_file:
             current_index_file.write(self._current_index)
-            current_index_file.close()
 
     def _tweet(self, mot):
         try:
@@ -55,18 +52,19 @@ class WordBot(object):
             for i in mot.readlines():
                 word = i.replace(bytes("\r\n", 'utf-8'), bytes('', 'utf-8'))
                 word = codecs.decode(word, 'utf-8')
-                self._word_list.append(word.lower())
-            mot.close()
+                self._word_list.append(word.lower()) 
         return self._word_list
+
     def reset_index(self):
         with open("current_index.txt", "w") as current_index_file:
             current_index_file.write(self.initial_index)
+
     def post_tweet(self):
        index = self._get_current_index
        wordlist = self._get_word_list
        word = wordlist[index]
        self._tweet(word)
-       self._increment_index()
+       self._increment_index() 
 
 if __name__ == '__main__':
     wordBot = WordBot(consumer_key, consumer_secret, access_token, access_token_secret)
