@@ -12,7 +12,7 @@ access_token_secret = '...'
 
 class WordBot(object):
     """
-    Bot tweetant tout les mots du dictionnaire
+    Bot tweetant tous les mots du dictionnaire
     """
     def __init__(self, consumer_key, consumer_secret, access_token, access_token_secret):
         self._consumer_key = consumer_key
